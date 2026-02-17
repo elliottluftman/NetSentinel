@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NetSentinel Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar card">
+        <div class="brand-wrap">
+          <h1 class="brand">NetSentinel<span class="cursor">_</span></h1>
+          <div class="status"><span class="dot"></span><span>MONITORING</span></div>
+        </div>
+        <div class="stats-inline" id="headerStats">Packets: 0 | Alerts: 0 | Uptime: 00:00:00</div>
+      </header>
+
+      <section class="alert-banner card" id="alertBanner">
+        <div class="alert-banner-head">Recent Threat Activity</div>
+        <div class="alert-stack" id="alertStack">
+          <div class="empty-state">No active alerts in the last 5 minutes.</div>
+        </div>
+      </section>
+
+      <main class="main-grid">
+        <section class="card">
+          <div class="card-title">Live Traffic Feed</div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Source</th>
+                  <th>Destination</th>
+                  <th>Protocol</th>
+                  <th>Size</th>
+                </tr>
+              </thead>
+              <tbody id="trafficBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="charts-column">
+          <div class="card chart-card">
+            <div class="card-title">Protocol Distribution</div>
+            <canvas id="protocolChart"></canvas>
+          </div>
+          <div class="card chart-card">
+            <div class="card-title">Traffic Over Time</div>
+            <canvas id="trafficChart"></canvas>
+          </div>
+          <div class="card chart-card">
+            <div class="card-title">Top Source IPs</div>
+            <canvas id="topSourcesChart"></canvas>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>NetSentinel v1.0 | Built by Elliott Luftman</span>
+        <span>For educational and authorized testing purposes only</span>
+      </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

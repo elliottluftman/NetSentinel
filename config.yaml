@@ -1,0 +1,30 @@
+# NetSentinel Configuration
+mode: "simulation"
+interface: "eth0"
+database: "netsentinel.db"
+api_port: 5000
+
+runtime:
+  log_level: "INFO"
+  enable_cors: true
+
+security:
+  api_key: ""  # Optional. Prefer NETSENTINEL_API_KEY env var in production.
+
+thresholds:
+  port_scan:
+    unique_ports: 10
+    time_window: 60
+  brute_force:
+    attempts: 20
+    time_window: 300
+    target_ports: [22, 3389, 21, 23, 445]
+  dns_tunneling:
+    subdomain_length: 50
+  data_exfiltration:
+    bytes_threshold: 10485760
+    time_window: 60
+
+simulation:
+  packets_per_second: 15
+  attack_probability: 0.08
