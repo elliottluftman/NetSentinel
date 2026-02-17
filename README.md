@@ -150,3 +150,22 @@ X-API-Key: <value>
 ## Portfolio Positioning
 
 This repository is a production-ready baseline with deploy/test/release scaffolding, designed to show practical security engineering and full-stack system design.
+
+## Project Website
+
+A dedicated project website is included in `site/`.
+
+### Run locally
+
+```bash
+cd site
+python3 -m http.server 8080
+```
+
+Open `http://localhost:8080`.
+
+### Deploy (Vercel)
+
+1. Import the GitHub repo in Vercel.
+2. Set **Root Directory** to `site`.
+3. Deploy.

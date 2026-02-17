@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NetSentinel | Real-Time Network Threat Monitoring</title>
+    <meta
+      name="description"
+      content="NetSentinel is a real-time network traffic analyzer and threat dashboard with simulation mode, live capture, detection rules, and CI-backed production scaffolding."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <a class="brand" href="#home">NetSentinel<span class="cursor">_</span></a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#security">Security</a>
+        <a href="#demo">Demo</a>
+      </nav>
+      <a class="btn ghost" href="https://github.com/elliottluftman/NetSentinel" target="_blank" rel="noreferrer">GitHub</a>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <p class="eyebrow">Cybersecurity Portfolio Project</p>
+        <h1>Real-Time Network Threat Detection With A Live SOC Dashboard</h1>
+        <p class="lead">
+          NetSentinel captures or simulates traffic, detects suspicious activity in real time,
+          stores telemetry, and visualizes everything in a fast browser dashboard.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="https://github.com/elliottluftman/NetSentinel" target="_blank" rel="noreferrer">View Repository</a>
+          <a class="btn ghost" href="#demo">See What It Tracks</a>
+        </div>
+        <div class="hero-grid">
+          <article class="metric-card">
+            <h3>Detection Rules</h3>
+            <p>Port scans, brute-force attempts, DNS tunneling, and data exfiltration spikes.</p>
+          </article>
+          <article class="metric-card">
+            <h3>Modes</h3>
+            <p>Simulation mode for no-root demos and live capture mode with Scapy.</p>
+          </article>
+          <article class="metric-card">
+            <h3>Engineering Quality</h3>
+            <p>CI on 3 Python versions, Docker build checks, CodeQL scans, release workflows.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <h2>What It Does</h2>
+        <div class="cards three">
+          <article class="card">
+            <h3>Ingest</h3>
+            <p>Consumes packet data from either Scapy live sniffing or synthetic simulation traffic.</p>
+          </article>
+          <article class="card">
+            <h3>Analyze</h3>
+            <p>Applies sliding-window threat rules and cooldown logic to reduce alert noise.</p>
+          </article>
+          <article class="card">
+            <h3>Visualize</h3>
+            <p>Presents alerts, protocol breakdowns, top source IPs, and traffic trends in real time.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="architecture" class="section">
+        <h2>System Architecture</h2>
+        <div class="architecture">
+          <div class="node">Capture / Simulator</div>
+          <div class="arrow">→</div>
+          <div class="node">Threat Analyzer</div>
+          <div class="arrow">→</div>
+          <div class="node">SQLite Store</div>
+          <div class="arrow">→</div>
+          <div class="node">Flask API</div>
+          <div class="arrow">→</div>
+          <div class="node">Live Dashboard</div>
+        </div>
+      </section>
+
+      <section id="security" class="section">
+        <h2>Production Readiness</h2>
+        <div class="cards two">
+          <article class="card">
+            <h3>Operational Controls</h3>
+            <ul>
+              <li>Health and readiness endpoints (`/healthz`, `/readyz`)</li>
+              <li>Optional API key auth for `/api/*`</li>
+              <li>Graceful shutdown and DB safety guards</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>GitHub Automation</h3>
+            <ul>
+              <li>CI tests for Python 3.10, 3.11, 3.12</li>
+              <li>Docker image build checks</li>
+              <li>CodeQL and dependency review workflows</li>
+              <li>Tag-based release workflow and GHCR publish path</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="demo" class="section demo">
+        <h2>Demo Flow</h2>
+        <ol>
+          <li>Launch simulation mode (`python run.py --mode simulation --port 5050`).</li>
+          <li>Open dashboard and watch packet stream populate instantly.</li>
+          <li>Observe injected attack patterns trigger alerts in real time.</li>
+          <li>Review alert severity, protocol distribution, and top talkers.</li>
+        </ol>
+        <div class="terminal">
+          <div class="dot-row"><span></span><span></span><span></span></div>
+          <pre><code>git clone https://github.com/elliottluftman/NetSentinel.git
+cd NetSentinel
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python run.py --mode simulation --port 5050</code></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>NetSentinel · Built by Elliott Luftman</p>
+      <p>
+        <a href="https://github.com/elliottluftman/NetSentinel" target="_blank" rel="noreferrer">Repository</a>
+        <span>·</span>
+        <a href="https://www.linkedin.com/in/elliottluftman" target="_blank" rel="noreferrer">LinkedIn</a>
+      </p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
