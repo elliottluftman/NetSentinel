@@ -1,8 +1,8 @@
 # NetSentinel
 
-[![CI](https://github.com/<your-username>/NetSentinel/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-username>/NetSentinel/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/<your-username>/NetSentinel/actions/workflows/codeql.yml/badge.svg)](https://github.com/<your-username>/NetSentinel/actions/workflows/codeql.yml)
-[![Release](https://github.com/<your-username>/NetSentinel/actions/workflows/release.yml/badge.svg)](https://github.com/<your-username>/NetSentinel/actions/workflows/release.yml)
+[![CI](https://github.com/elliottluftman/NetSentinel/actions/workflows/ci.yml/badge.svg)](https://github.com/elliottluftman/NetSentinel/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/elliottluftman/NetSentinel/actions/workflows/codeql.yml/badge.svg)](https://github.com/elliottluftman/NetSentinel/actions/workflows/codeql.yml)
+[![Release](https://github.com/elliottluftman/NetSentinel/actions/workflows/release.yml/badge.svg)](https://github.com/elliottluftman/NetSentinel/actions/workflows/release.yml)
 
 Real-time network traffic analyzer and threat detection dashboard built with Python, Flask, SQLite, and Chart.js.
 
@@ -104,7 +104,7 @@ git push origin v1.0.0
 Published image:
 
 ```text
-ghcr.io/<your-username>/netsentinel:v1.0.0
+ghcr.io/elliottluftman/netsentinel:v1.0.0
 ```
 
 ## Configuration
