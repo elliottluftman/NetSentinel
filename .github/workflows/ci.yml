@@ -15,6 +15,9 @@ jobs:
       matrix:
         python-version: ["3.10", "3.11", "3.12"]
 
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,7 +35,7 @@ jobs:
 
       - name: Compile check
         run: |
-          python -m py_compile run.py wsgi.py netsentinel/*.py
+          python -m py_compile run.py wsgi.py netsentinel/__init__.py netsentinel/analyzer.py netsentinel/api.py netsentinel/capture.py netsentinel/database.py netsentinel/simulator.py
 
       - name: Run tests
         run: |
