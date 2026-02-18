@@ -147,13 +147,7 @@ X-API-Key: <value>
 - For Internet exposure, run behind TLS reverse proxy (Nginx/Caddy/Cloudflare Tunnel).
 - Keep API key in environment variables, not committed config files.
 
-## Portfolio Positioning
 
-This repository is a production-ready baseline with deploy/test/release scaffolding, designed to show practical security engineering and full-stack system design.
-
-## Project Website
-
-A dedicated project website is included in `site/`.
 
 ### Run locally
 
