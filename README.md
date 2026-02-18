@@ -158,8 +158,4 @@ python3 -m http.server 8080
 
 Open `http://localhost:8080`.
 
-### Deploy (Vercel)
 
-1. Import the GitHub repo in Vercel.
-2. Set **Root Directory** to `site`.
-3. Deploy.
