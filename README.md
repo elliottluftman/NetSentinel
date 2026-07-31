@@ -55,7 +55,7 @@ NetSentinel/
 ### 1. Setup
 
 ```bash
-cd /Users/elliottluftman/NetSentinel
+cd /Users/(user)/NetSentinel
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
